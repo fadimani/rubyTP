@@ -6,8 +6,7 @@ class UtilisateurTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @utilisateur = Utilisateur.new(nom: "prenom1 Nom1",
-                                   email: "prenom1@example.com")
+    @utilisateur = Utilisateur.new(nom: "prenom1 Nom1", email: "prenom1@example.com", password: "pppppp", password_confirmation: "pppppp")
   end
 
   test"nom doit etre present" do

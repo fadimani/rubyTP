@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @page_name = 'home'
+    @article = utilisateur_courant.articles.build if logged_in?
   end
 
   def about

@@ -1,3 +1,25 @@
+
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="article_form">
+        <%= form_for(@article) do |f| %>
+
+          <div class="col-sm-8">
+            <%= f.text_field :titre, rows: 10, class: "form-control", placeholder: "Titre" %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Texte" %>
+          </div>
+          <%= f.submit "Soumettre", class: "btn btn-primary" %>
+        <% end %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+
+
+
 <div class="jumbotron" >
   <h1>Welcome to the site  </h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas quis velit nec semper. Proin et velit nec sapien facilisis varius sit amet nec neque. Phasellus ornare, odio eu suscipit hendrerhellooooooooooooooooooooooit, orci tortor dapibus neque, at sollicitudin tortor sapien vitae ipsum. Nulla placerat aliquam felis, vel ultricies mauris tincidunt id. Nam dapibus turpis arcu, vel bibendum mauris commodo in.</p>
@@ -7,5 +29,4 @@
 </div>
 
 
-
-tes
+<% end %>
