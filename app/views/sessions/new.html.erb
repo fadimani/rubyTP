@@ -1,0 +1,32 @@
+<h1>Identification</h1>
+
+<%= form_for(:session, url: login_path, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+
+  <div class="form-group">
+    <div class="col-sm-2 control-label">
+      <%= f.label :email %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.email_field :email, class:"form-control",  placeholder:"Entrer votre email"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-2 control-label">
+      <%= f.label :password %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.password_field :password , class:"form-control",  placeholder:"Entrer votre password"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-4">
+      <%= f.submit "Se connecter", class: "btn btn-primary" %>
+    </div>
+  </div>
+
+<% end %>
+
+<p>Pas encore inscrit ? <%= link_to "S'inscrire !", signup_path %></p>
+

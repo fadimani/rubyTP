@@ -1,0 +1,15 @@
+<h1>Tous les utilisateurs</h1>
+
+<ul class="utilisateurs">
+  <% @utilisateurs.each do |utilisateur| %>
+    <li>
+      <%= link_to utilisateur.nom, utilisateur %>
+
+      <% if @utilisateur_courant.admin? || utilisateur_courant == utilisateur  %>
+        |     <%= link_to "delete", utilisateur, method: :delete,
+                          data: { confirm: "confirmer" } %>
+      <% end %>
+
+    </li>
+  <% end %>
+</ul>
