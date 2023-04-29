@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = utilisateur_courant.articles.build(article_params)
+
     if @article.save
       flash[:success] = "Article created"
       redirect_to root_url

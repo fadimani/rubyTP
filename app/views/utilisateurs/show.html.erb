@@ -1,6 +1,16 @@
 <h1>
   <%= @utilisateur.nom %>, <%= @utilisateur.email %>
 
+  <ul class="utilisateurs">
+    <% @articles.each do |article| %>
+      <li>
+        <%=  article.titre %>
+
+      </li>
+    <% end %>
+  </ul>
+
+
   <% if @utilisateur.articles.any? %>
     <h3>Articles (<%= @utilisateur.articles.count %>)</h3>
     <ol class="articles">
