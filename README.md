@@ -121,7 +121,12 @@ now we gotta add controller to control this bad boy:
 
 
 ## 14) now we visit "utilisateur_test.rb" and start making some tests:
-we add this here:
+We add this here:
+
+	assert
+	assert_not
+	
+These 2 basically throw errors when we test them. "assert" expects true and "assert_not" expects false or nil. If they don't get what they expect. they will throw an error.
 
     def setup
        @utilisateur = Utilisateur.new(nom: "prenom1 Nom1",
@@ -130,7 +135,7 @@ we add this here:
 
   	test"nom doit etre present" do
    	 @utilisateur.nom = ""
-   	 assert_not @utilisateur.valid?
+   	 assert_not @utilisateur.valid?        
   	end
 now to migrate the test:
 > rails db:migrate RAILS_ENV=test
